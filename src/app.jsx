@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { faker } from "@faker-js/faker";
 
 class App extends Component {
   render() {
