@@ -11,34 +11,42 @@ class Issue extends Component {
     render() {
         const { issue } = this.props
         return (
-            <>
-                {
-                    <div className="card-body">
-
-                        <div>
-                            <div className="logo">
-                                <h2>{issueIcon}</h2>
-                            </div>
-                            <div className="title">
-                                <h2>{issue.title}</h2>
-                                <div className="types">
-                                    {
-                                        issue.tags.map(tag => <p className=''>{tag.type}: {tag.label} </p>)
-                                    }
-                                </div>
-                            </div>
-                            <div className="commines">
-                                {issueCommitIcon}
-                                {issue.comments}
-                            </div>
-                        </div>
-                        <div>
-                            <span>#{issue.id}: opented 3 days ego by : <a href={issue.user.avatarURL}>{issue.user.username}</a> </span>
-
-                        </div>
+          <>
+            {
+              <div className="card-body">
+                <div className="logo">
+                  <h2>{issueIcon}</h2>
+                </div>
+                <div className="card-info">
+                  <div className="card-title">
+                    <div className="title">
+                      <h2>{issue.title}
+                      </h2>
+                      <div className="types">
+                        {issue.tags.map((tag) => (
+                          <p
+                            className={tag.type} 
+                          >
+                            {tag.type}: {tag.label}{" "}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                }
-            </>
+                  <div>
+                    <span>
+                      #{issue.id}: opented 3 days ego by :{" "}
+                      <a href={issue.user.avatarURL}>{issue.user.username}</a>{" "}
+                    </span>
+                  </div>
+                  </div>
+                    <div className="commines">
+                      {issueCommitIcon}
+                      {issue.comments}
+                    </div>
+                </div>
+              </div>
+            }
+          </>
         );
     }
 }
