@@ -9,7 +9,7 @@ class Issues extends Component {
     }
 
     isFinished = () => {
-        let result = this.state.issues.filter((item) => item.isFinished === "true");
+        let result = this.state.issues.filter((item) => item.isFinished === true);
         return this.setState({ finished: result })
     }
     render() {
